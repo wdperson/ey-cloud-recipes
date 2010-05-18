@@ -50,3 +50,5 @@ require_recipe "resque"
 #
 #uncomment to use the solr recipe
 #require_recipe "solr"
+
+require_recipe "resque_web"
