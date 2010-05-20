@@ -16,6 +16,9 @@ if ['solo', 'util'].include?(node[:instance_role])
     group 'root' 
     mode 0644 
     source "monitrc.conf.erb" 
+    variables({ 
+      :app_name => app
+    })
     end
   end
 end
