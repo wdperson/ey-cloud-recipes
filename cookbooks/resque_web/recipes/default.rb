@@ -10,14 +10,14 @@ if ['solo', 'util'].include?(node[:instance_role])
     version "0.17"
   end
 
-  node[:applications].each do |app, data|
+  node[:applications].each do |app_name, data|
     template "/etc/monit.d/resque_web.monitrc" do 
     owner 'root' 
     group 'root' 
     mode 0644 
     source "monitrc.conf.erb" 
     variables({ 
-      :app_name => app
+      :app_name => app_name
     })
     end
   end
